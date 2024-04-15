@@ -1,8 +1,9 @@
 import { Box, Container, Grid } from "@mui/material";
 import React from "react";
+import ConnectWallet from "../../components/connect-wallet";
 import Logo from "../../components/logo";
-import Menu from "../menu/Menu";
 import SwitchWallet from "../../components/logo/switch-wallet";
+import Menu from "../menu/Menu";
 
 export const Header = () => {
   return (
@@ -30,7 +31,9 @@ export const Header = () => {
           <Grid item>
             <SwitchWallet />
           </Grid>
-          <Grid item></Grid>
+          <Grid item>
+            <ConnectWallet />
+          </Grid>
         </Grid>
       </Box>
     </Container>
