@@ -10,17 +10,17 @@ const ConnectWalletModalLeftSide = () => {
   return (
     <Box
       sx={{
+        height: "100%",
         background: COLOR_PRIMARY_BLACK,
         color: "white",
         px: 3.75,
-        py: 2.25,
 
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
       }}
     >
-      <Box>
+      <Box sx={{ pt: 2.25 }}>
         <Box sx={{ py: 2 }}>
           <Logo variant={"gradient"} />
         </Box>
@@ -37,7 +37,7 @@ const ConnectWalletModalLeftSide = () => {
         </Button>
       </Box>
 
-      <Box>
+      <Box sx={{ pb: 2.25 }}>
         <Box sx={{ mx: 1.25 }}>
           <StepSlider value={1} max={3} step={1} />
         </Box>

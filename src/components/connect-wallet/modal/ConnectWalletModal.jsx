@@ -58,7 +58,7 @@ const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
               />
             </Box>
 
-            <Box>
+            <Grid container spacing={2.5}>
               {[
                 { label: "MetaMask", icon: imgMetaMask, variant: "gradient" },
                 { label: "OKW Wallet", icon: imgOKW },
@@ -67,15 +67,15 @@ const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
                 { label: "Bitget Wallet", icon: imgBitgetWallet },
                 { label: "Binance", icon: imgBinance },
               ].map((item, itemIndex) => (
-                <Box key={itemIndex}>
+                <Grid item key={itemIndex} xs={12} sm={6} md={6} mg={6}>
                   <ConnectWalletButton
                     label={item?.label ?? ""}
                     icon={item?.icon ?? imgMetaMask}
                     variant={item?.variant ?? "default"}
                   />
-                </Box>
+                </Grid>
               ))}
-            </Box>
+            </Grid>
           </Box>
         </Grid>
       </Grid>
