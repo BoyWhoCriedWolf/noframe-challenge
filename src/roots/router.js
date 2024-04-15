@@ -16,11 +16,11 @@ export const router = createBrowserRouter([
 
       //   markets
       { path: "/markets", element: <Markets /> },
-      { path: "/market/:market-id?", element: <MarketDetail /> },
+      { path: "/market/:market_id?", element: <MarketDetail /> },
 
       //   earn
       { path: "/earn", element: <Earn /> },
-      { path: "/earn/:earn-id?", element: <EarnDetail /> },
+      { path: "/earn/:earn_id?", element: <EarnDetail /> },
 
       //   redeem
       { path: "/redeem", element: <Redeem /> },
