@@ -6,12 +6,19 @@ import PageContent from "../../layout/page-content";
 import MarketFilter from "./market-filter";
 import { Search } from "@mui/icons-material";
 import MarketsTable from "./MarketsTable";
+import { useNavigate } from "react-router-dom";
 
 const Markets = () => {
+  const navigate = useNavigate();
+
   const [filterForm, setFilterForm] = useState({
     search: "",
     filter: "Active",
   });
+
+  const handleClickRow = (row, rowIndex) => {
+    navigate(`/market/${row?.id ?? "#"}`);
+  };
 
   return (
     <Container>
@@ -48,6 +55,7 @@ const Markets = () => {
         <MarketsTable
           data={[
             {
+              id: "pt-wst-eth",
               name: "PT wstETH",
               description: "Lido",
               maturity: "2027-12-30",
@@ -59,6 +67,7 @@ const Markets = () => {
               icon: null,
             },
             {
+              id: "pt-sw-eth",
               name: "PT swETH",
               description: "Swell",
               maturity: "2027-12-30",
@@ -70,6 +79,7 @@ const Markets = () => {
               icon: null,
             },
           ]}
+          onClickRow={handleClickRow}
         />
       </PageContent>
     </Container>

@@ -3,7 +3,7 @@ import React from "react";
 import { COLOR_PRIMARY_GRADIENT } from "../../constants/colors";
 import "./table.css";
 
-const Table = ({ data = [], columns = [] }) => {
+const Table = ({ data = [], columns = [], onClickRow = () => {} }) => {
   const th = useTheme();
   return (
     <table style={{ borderCollapse: "collapse", width: "100%" }}>
@@ -30,13 +30,17 @@ const Table = ({ data = [], columns = [] }) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item, itemIndex) => {
+        {data.map((item, itemIndex, self) => {
           return (
             <React.Fragment key={itemIndex}>
               <tr>
                 <td colSpan={columns.length} style={{ height: 8 }}></td>
               </tr>
-              <tr align="center" className="table-row">
+              <tr
+                align="center"
+                className="table-row"
+                onClick={() => onClickRow(item, itemIndex, self)}
+              >
                 {columns.map((column, columnIndex) => {
                   const renderValue = item?.[column?.name ?? ""] ?? "";
                   return (

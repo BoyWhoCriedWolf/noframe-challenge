@@ -1,6 +1,7 @@
 .table-row {
   margin-top: 8px;
   border: 1px solid #262725;
+  cursor: pointer;
 }
 
 .table-row:hover {

@@ -1,10 +1,11 @@
 import React from "react";
 import Table from "../../components/table";
 
-const MarketsTable = ({ data = [] }) => {
+const MarketsTable = ({ data = [], onClickRow = () => {} }) => {
   return (
     <Table
       data={data}
+      onClickRow={onClickRow}
       columns={[
         { name: "name", label: "Name" },
         { name: "maturity", label: "Maturity" },
