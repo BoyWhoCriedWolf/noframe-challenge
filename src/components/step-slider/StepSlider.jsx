@@ -60,6 +60,7 @@ const StepSlider = ({ value = 0, max = 3, step = 1 }) => {
           const stepValue = itemIndex * step;
           return (
             <Box
+              key={itemIndex}
               sx={{
                 position: "absolute",
                 width: 10,

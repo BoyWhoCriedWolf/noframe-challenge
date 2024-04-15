@@ -1,73 +1,83 @@
-import { Box, Button, Dialog, Grid, Typography } from "@mui/material";
+import { Close } from "@mui/icons-material";
+import {
+  Box,
+  Checkbox,
+  Dialog,
+  FormControlLabel,
+  Grid,
+  IconButton,
+  Link,
+  Typography,
+} from "@mui/material";
 import React from "react";
-import { COLOR_PRIMARY_BLACK } from "../../../constants/colors";
-import Logo from "../../logo";
-import { WarningOutlined } from "@mui/icons-material";
-import StepSlider from "../../step-slider/StepSlider";
-import imgBlockNative from "../../../assets/img/icons/blocknative.png";
+import {
+  default as imgBinance,
+  default as imgBitgetWallet,
+} from "../../../assets/img/icons/Bitget.png";
+import imgOKW from "../../../assets/img/icons/OKX Wallet.png";
+import imgWalletConnect from "../../../assets/img/icons/WalletConnect.png";
+import imgCoin98 from "../../../assets/img/icons/coin98.png";
+import imgMetaMask from "../../../assets/img/icons/metamask.png";
+import ConnectWalletButton from "../connect-wallet-button";
+import ConnectWalletModalLeftSide from "./ConnectWalletModalLeftSide";
 
 const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
   return (
     <Dialog open={isOpen} fullWidth={true} maxWidth="md" onClose={onClose}>
       <Grid container alignItems={"stretch"}>
         <Grid item lg={4} md={4} sm={4} xs={12}>
+          <ConnectWalletModalLeftSide />
+        </Grid>
+        <Grid item lg={8} md={8} sm={8} xs={12} sx={{ border: "solid 1px" }}>
           <Box
             sx={{
-              background: COLOR_PRIMARY_BLACK,
-              color: "white",
-              px: 3.75,
-              py: 2.25,
-
+              py: 1,
+              px: 2.5,
               display: "flex",
-              flexDirection: "column",
               justifyContent: "space-between",
+              alignItems: "center",
+              borderBottom: "solid 1px",
             }}
           >
-            <Box>
-              <Box sx={{ py: 2 }}>
-                <Logo variant={"gradient"} />
-              </Box>
-              <Typography fontWeight={600} sx={{ mb: 1 }}>
-                Connect your wallet
-              </Typography>
-              <Typography fontSize={13} lineHeight={"19.5px"} sx={{ mb: 1.25 }}>
-                Connecting your wallet is like “logging in” to Web3. Select your
-                wallet from the options to get started.
-              </Typography>
+            <Typography fontWeight={600}>Available Wallets (6)</Typography>
+            <IconButton onClick={onClose} size="small">
+              <Close />
+            </IconButton>
+          </Box>
 
-              <Button color={"primary"} endIcon={<WarningOutlined />} fullWidth>
-                I don't have a wallet
-              </Button>
+          <Box sx={{ px: 3, pt: 1, pb: 7.5 }}>
+            <Box sx={{ mb: 2 }}>
+              <FormControlLabel
+                label={
+                  <>
+                    I agree to the <Link>Terms & Conditions</Link> and{" "}
+                    <Link>Privacy Policy</Link>
+                  </>
+                }
+                control={<Checkbox />}
+              />
             </Box>
 
             <Box>
-              <Box sx={{ mx: 1.25 }}>
-                <StepSlider value={1} max={3} step={1} />
-              </Box>
-
-              <Grid
-                container
-                spacing={1}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                <Grid item>
-                  <Typography
-                    fontWeight={600}
-                    fontSize={12}
-                    lineHeight={"18px"}
-                  >
-                    powered by <b>blocknative</b>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <img src={imgBlockNative} alt="Block Native" />
-                </Grid>
-              </Grid>
+              {[
+                { label: "MetaMask", icon: imgMetaMask, variant: "gradient" },
+                { label: "OKW Wallet", icon: imgOKW },
+                { label: "Coin98 Wallet", icon: imgCoin98 },
+                { label: "WalletConnect", icon: imgWalletConnect },
+                { label: "Bitget Wallet", icon: imgBitgetWallet },
+                { label: "Binance", icon: imgBinance },
+              ].map((item, itemIndex) => (
+                <Box key={itemIndex}>
+                  <ConnectWalletButton
+                    label={item?.label ?? ""}
+                    icon={item?.icon ?? imgMetaMask}
+                    variant={item?.variant ?? "default"}
+                  />
+                </Box>
+              ))}
             </Box>
           </Box>
         </Grid>
-        <Grid item lg={8} md={8} sm={8} xs={12}></Grid>
       </Grid>
     </Dialog>
   );
