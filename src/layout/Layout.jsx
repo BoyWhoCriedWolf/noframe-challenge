@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <Stack sx={{ minHeight: "100vh" }} justifyContent={"space-between"}>
       <Header />
-      <Box flexGrow={1}>
+      <Box flexGrow={1} sx={{ pt: 1 }}>
         <Outlet />
       </Box>
       <Footer />

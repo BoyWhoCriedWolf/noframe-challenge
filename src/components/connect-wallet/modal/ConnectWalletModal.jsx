@@ -18,6 +18,7 @@ import imgOKW from "../../../assets/img/icons/OKX Wallet.png";
 import imgWalletConnect from "../../../assets/img/icons/WalletConnect.png";
 import imgCoin98 from "../../../assets/img/icons/coin98.png";
 import imgMetaMask from "../../../assets/img/icons/metamask.png";
+import { COLOR_PRIMARY_BLACK } from "../../../constants/colors";
 import ConnectWalletButton from "../connect-wallet-button";
 import ConnectWalletModalLeftSide from "./ConnectWalletModalLeftSide";
 
@@ -28,7 +29,14 @@ const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
         <Grid item lg={4} md={4} sm={4} xs={12}>
           <ConnectWalletModalLeftSide />
         </Grid>
-        <Grid item lg={8} md={8} sm={8} xs={12} sx={{ border: "solid 1px" }}>
+        <Grid
+          item
+          lg={8}
+          md={8}
+          sm={8}
+          xs={12}
+          sx={{ border: `solid ${COLOR_PRIMARY_BLACK} 1px` }}
+        >
           <Box
             sx={{
               py: 1,
@@ -36,7 +44,7 @@ const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              borderBottom: "solid 1px",
+              borderBottom: `solid ${COLOR_PRIMARY_BLACK} 1px`,
             }}
           >
             <Typography fontWeight={600}>Available Wallets (6)</Typography>

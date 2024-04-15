@@ -5,7 +5,10 @@ import imgUnion from "../../assets/img/backgrounds/Union.svg";
 import imgMedium from "../../assets/img/icons/medium.svg";
 import Logo from "../../components/logo";
 import SocialButton from "../../components/social-button/SocialButton";
-import { COLOR_PRIMARY_BACKGROUND } from "../../constants/colors";
+import {
+  COLOR_PRIMARY_BACKGROUND,
+  COLOR_PRIMARY_BLACK,
+} from "../../constants/colors";
 
 const Footer = () => {
   return (
@@ -18,7 +21,7 @@ const Footer = () => {
       <Box
         sx={{
           position: "relative",
-          borderTop: "solid 1px",
+          borderTop: `solid ${COLOR_PRIMARY_BLACK} 1px`,
           background: COLOR_PRIMARY_BACKGROUND,
         }}
       >
