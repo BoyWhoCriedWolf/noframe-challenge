@@ -2,6 +2,7 @@ import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 import Logo from "../../components/logo";
 import Menu from "../menu/Menu";
+import SwitchWallet from "../../components/logo/switch-wallet";
 
 export const Header = () => {
   return (
@@ -25,8 +26,10 @@ export const Header = () => {
             <Menu />
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item></Grid>
+        <Grid container justifyContent={"flex-end"} alignItems={"center"}>
+          <Grid item>
+            <SwitchWallet />
+          </Grid>
           <Grid item></Grid>
         </Grid>
       </Box>
