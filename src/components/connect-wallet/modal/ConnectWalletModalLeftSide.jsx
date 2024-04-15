@@ -2,7 +2,6 @@ import { WarningOutlined } from "@mui/icons-material";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import imgBlockNative from "../../../assets/img/icons/blocknative.png";
-import { COLOR_PRIMARY_BLACK } from "../../../constants/colors";
 import Logo from "../../logo";
 import StepSlider from "../../step-slider/StepSlider";
 
@@ -11,8 +10,8 @@ const ConnectWalletModalLeftSide = () => {
     <Box
       sx={{
         height: "100%",
-        background: COLOR_PRIMARY_BLACK,
-        color: "white",
+        background: (th) => th.palette.common.black,
+        color: (th) => th.palette.common.white,
         px: 3.75,
 
         display: "flex",
@@ -24,7 +23,12 @@ const ConnectWalletModalLeftSide = () => {
         <Box sx={{ py: 2 }}>
           <Logo variant={"gradient"} />
         </Box>
-        <Typography fontWeight={600} sx={{ mb: 1 }}>
+        <Typography
+          fontWeight={600}
+          fontSize={16}
+          lineHeight={"24px"}
+          sx={{ mb: 1 }}
+        >
           Connect your wallet
         </Typography>
         <Typography fontSize={13} lineHeight={"19.5px"} sx={{ mb: 1.25 }}>

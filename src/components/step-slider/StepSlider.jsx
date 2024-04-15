@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { COLOR_PRIMARY_GREEN } from "../../constants/colors";
 
 const StepSlider = ({ value = 0, max = 3, step = 1 }) => {
   return (
@@ -19,7 +18,7 @@ const StepSlider = ({ value = 0, max = 3, step = 1 }) => {
           position: "relative",
           width: "100%",
           height: 2,
-          background: "white",
+          background: (th) => th.palette.common.black,
         }}
       ></Box>
 
@@ -31,7 +30,7 @@ const StepSlider = ({ value = 0, max = 3, step = 1 }) => {
           left: 0,
           height: 2,
           width: `${(value / (max - step)) * 100}%`,
-          background: COLOR_PRIMARY_GREEN,
+          background: (th) => th.palette.primary.main,
         }}
       ></Box>
 
@@ -47,7 +46,7 @@ const StepSlider = ({ value = 0, max = 3, step = 1 }) => {
               height: 10,
               top: 0,
               left: `${(stepValue / (max - step)) * 100}%`,
-              background: "white",
+              background: (th) => th.palette.common.white,
               borderRadius: "50%",
             }}
           ></Box>
@@ -67,7 +66,7 @@ const StepSlider = ({ value = 0, max = 3, step = 1 }) => {
                 height: 10,
                 top: 0,
                 left: `${(stepValue / (max - step)) * 100}%`,
-                background: COLOR_PRIMARY_GREEN,
+                background: (th) => th.palette.primary.main,
                 borderRadius: "50%",
               }}
             ></Box>

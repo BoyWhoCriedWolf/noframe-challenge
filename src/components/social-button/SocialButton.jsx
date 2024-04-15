@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { COLOR_PRIMARY_BLACK } from "../../constants/colors";
 
 const SocialButton = ({ label = "", icon = null }) => {
   return (
@@ -8,8 +7,8 @@ const SocialButton = ({ label = "", icon = null }) => {
       sx={{
         width: 36,
         height: 36,
-        background: COLOR_PRIMARY_BLACK,
-        color: "white",
+        background: (th) => th.palette.common.black,
+        color: (th) => th.palette.common.white,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

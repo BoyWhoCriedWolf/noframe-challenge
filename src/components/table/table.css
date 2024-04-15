@@ -1,0 +1,10 @@
+.table-row {
+  margin-top: 8px;
+  border: 1px solid #262725;
+}
+
+.table-row:hover {
+  background: #efe7ff;
+  border: 1px solid #262725;
+  box-shadow: 3px 3px 0px #262725;
+}

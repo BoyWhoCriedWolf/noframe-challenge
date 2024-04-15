@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { COLOR_PRIMARY_BLACK } from "../../../constants/colors";
 
 const MarketFilterButton = ({
   isActive = false,
@@ -17,8 +16,8 @@ const MarketFilterButton = ({
         justifyContent: "center",
         alignItems: "center",
         cursor: "pointer",
-        background: isActive ? COLOR_PRIMARY_BLACK : "inherit",
-        color: isActive ? "white" : "inherit",
+        background: isActive ? (th) => th.palette.common.black : "inherit",
+        color: isActive ? (th) => th.palette.common.white : "inherit",
       }}
     >
       {children}

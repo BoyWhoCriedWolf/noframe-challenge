@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { COLOR_PRIMARY_GREEN, COLOR_PRIMARY_BLACK } from "../../constants/colors";
 
 export const MenuButton = ({ label = "", path = "" }) => {
   const { pathname } = useLocation();
@@ -22,13 +21,13 @@ export const MenuButton = ({ label = "", path = "" }) => {
         border: "solid transparent 1px",
         ":hover": {
           /* black */
-          border: `1px solid ${COLOR_PRIMARY_BLACK}`,
-          boxShadow: `3px 3px 0px ${COLOR_PRIMARY_BLACK}`,
+          border: (th) => `1px solid ${th.palette.common.black}`,
+          boxShadow: (th) => `3px 3px 0px ${th.palette.common.black}`,
         },
 
         ...(isActive
           ? {
-              background: COLOR_PRIMARY_GREEN,
+              background: (th) => th.palette.primary.main,
               boxShadow: "inset 3px 3px 0px #000000",
             }
           : {}),

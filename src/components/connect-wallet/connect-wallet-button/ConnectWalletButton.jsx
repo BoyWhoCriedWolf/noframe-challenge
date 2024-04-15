@@ -1,9 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import {
-  COLOR_PRIMARY_BLACK,
-  COLOR_PRIMARY_GRADIENT,
-} from "../../../constants/colors";
+import { COLOR_PRIMARY_GRADIENT } from "../../../constants/colors";
 
 const ConnectWalletButton = ({
   label = "",
@@ -14,7 +11,7 @@ const ConnectWalletButton = ({
     <Box
       sx={{
         background: variant === "gradient" ? COLOR_PRIMARY_GRADIENT : "inherit",
-        border: `solid ${COLOR_PRIMARY_BLACK} 1px`,
+        border: (th) => `solid ${th.palette.common.black} 1px`,
         py: 2.5,
         width: "100%",
         display: "flex",

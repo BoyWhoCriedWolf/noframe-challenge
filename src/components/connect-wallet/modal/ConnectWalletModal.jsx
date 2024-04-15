@@ -18,7 +18,6 @@ import imgOKW from "../../../assets/img/icons/OKX Wallet.png";
 import imgWalletConnect from "../../../assets/img/icons/WalletConnect.png";
 import imgCoin98 from "../../../assets/img/icons/coin98.png";
 import imgMetaMask from "../../../assets/img/icons/metamask.png";
-import { COLOR_PRIMARY_BLACK } from "../../../constants/colors";
 import ConnectWalletButton from "../connect-wallet-button";
 import ConnectWalletModalLeftSide from "./ConnectWalletModalLeftSide";
 
@@ -35,7 +34,7 @@ const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
           md={8}
           sm={8}
           xs={12}
-          sx={{ border: `solid ${COLOR_PRIMARY_BLACK} 1px` }}
+          sx={{ border: (th) => `solid ${th.palette.common.black} 1px` }}
         >
           <Box
             sx={{
@@ -44,10 +43,12 @@ const ConnectWalletModal = ({ isOpen = false, onClose = () => {} }) => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              borderBottom: `solid ${COLOR_PRIMARY_BLACK} 1px`,
+              borderBottom: (th) => `solid ${th.palette.common.black} 1px`,
             }}
           >
-            <Typography fontWeight={600}>Available Wallets (6)</Typography>
+            <Typography fontWeight={600} fontSize={16} lineHeight={"24px"}>
+              Available Wallets (6)
+            </Typography>
             <IconButton onClick={onClose} size="small">
               <Close />
             </IconButton>
