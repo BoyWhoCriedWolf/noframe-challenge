@@ -5,14 +5,13 @@ import PageSubtitle from "../../components/typography/page-subtitle";
 import PageContent from "../../layout/page-content";
 import MarketFilter from "./market-filter";
 import { Search } from "@mui/icons-material";
+import MarketsTable from "./MarketsTable";
 
 const Markets = () => {
   const [filterForm, setFilterForm] = useState({
     search: "",
     filter: "Active",
   });
-
-  console.log(filterForm);
 
   return (
     <Container>
@@ -45,6 +44,33 @@ const Markets = () => {
             />
           </Grid>
         </Grid>
+
+        <MarketsTable
+          data={[
+            {
+              name: "PT wstETH",
+              description: "Lido",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$2399",
+              icon: null,
+            },
+            {
+              name: "PT swETH",
+              description: "Swell",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$0",
+              icon: null,
+            },
+          ]}
+        />
       </PageContent>
     </Container>
   );
