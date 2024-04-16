@@ -1,12 +1,12 @@
-import { Container, Grid, TextField } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import SearchBox from "../../components/search-box/SearchBox";
 import PageHeading from "../../components/typography/page-heading/PageHeading";
 import PageSubtitle from "../../components/typography/page-subtitle";
 import PageContent from "../../layout/page-content";
-import MarketFilter from "./market-filter";
-import { Search } from "@mui/icons-material";
 import MarketsTable from "./MarketsTable";
-import { useNavigate } from "react-router-dom";
+import MarketFilter from "./market-filter";
 
 const Markets = () => {
   const navigate = useNavigate();
@@ -35,12 +35,7 @@ const Markets = () => {
           sx={{ py: 2 }}
         >
           <Grid item lg={4} md={4} sm={6} xs={6}>
-            <TextField
-              fullWidth
-              size="small"
-              placeholder="Search ..."
-              InputProps={{ startAdornment: <Search /> }}
-            />
+            <SearchBox />
           </Grid>
           <Grid item>
             <MarketFilter
