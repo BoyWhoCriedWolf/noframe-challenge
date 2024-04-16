@@ -16,7 +16,7 @@ export const DARK_THEME = createTheme({
   shape: { borderRadius: 0 },
   typography: {
     fontFamily: '"Poppins", sans-serif',
-    fontSize: "14px",
+    fontSize: 14,
     body1: { fontSize: "14px", lineHeight: "20px" },
     button: { textTransform: "none" },
   },

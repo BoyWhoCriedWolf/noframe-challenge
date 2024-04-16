@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import GreenShadowContainer from "../../../components/containers/green-shadow-container";
 import THEMES from "../../../theme";
 
 const MintCard = () => {
@@ -22,14 +23,7 @@ const MintCard = () => {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-        background: (th) => th.palette.common.white,
-        border: (th) => `1px solid ${th.palette.common.black}`,
-        boxShadow: (th) => `9px 7px 0px ${th.palette.primary.main}`,
-      }}
-    >
+    <GreenShadowContainer>
       <Grid container alignItems={"center"} spacing={1.5} sx={{ py: 4, px: 4 }}>
         <Grid item lg={2} md={2} sm={2} xs={2}>
           <Typography
@@ -164,7 +158,7 @@ const MintCard = () => {
           </Box>
         </Grid>
       </Grid>
-    </Box>
+    </GreenShadowContainer>
   );
 };
 
