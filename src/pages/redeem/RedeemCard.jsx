@@ -86,7 +86,15 @@ const RedeemCard = () => {
             { label: "Actual Redemption Amount", value: "3%" },
           ].map((item, itemIndex) => {
             return (
-              <Grid item lg={6} md={6} sm={6} xs={12} sx={{ p: 1 }}>
+              <Grid
+                key={itemIndex}
+                item
+                lg={6}
+                md={6}
+                sm={6}
+                xs={12}
+                sx={{ p: 1 }}
+              >
                 <DotsConnected words={[item?.label, item?.value]} />
               </Grid>
             );
