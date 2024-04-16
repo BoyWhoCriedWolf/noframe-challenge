@@ -19,17 +19,7 @@ const MintCard = () => {
         boxShadow: (th) => `9px 7px 0px ${th.palette.primary.main}`,
       }}
     >
-      <Grid
-        container
-        alignItems={"center"}
-        spacing={1.5}
-        sx={{
-          pt: 4,
-          pb: 5.5,
-          pl: 4,
-          pr: 7,
-        }}
-      >
+      <Grid container alignItems={"center"} spacing={1.5} sx={{ py: 4, px: 4 }}>
         <Grid item lg={2} md={2} sm={2} xs={2}>
           <Typography
             fontWeight={600}
@@ -115,8 +105,28 @@ const MintCard = () => {
         </Grid>
         <Grid item lg={5} md={5} sm={5} xs={5} sx={{ opacity: 0.5 }}>
           <Typography fontWeight={500} fontSize={12} lineHeight={"18px"}>
-            Collateral Ratio ........................150%
+            Collateral Ratio ....................150%
           </Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container justifyContent={"center"} sx={{ mb: 5.5 }}>
+        <Grid item lg={6} md={6} sm={6} xs={12}>
+          <Box
+            sx={{
+              color: (th) => th.palette.secondary.contrastText,
+              background: (th) => th.palette.secondary.main,
+              py: 1.5,
+              width: "100%",
+              cursor: "pointer",
+              border: (th) => `solid 1px ${th.palette.common.black}`,
+
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            Mint fixUSD
+          </Box>
         </Grid>
       </Grid>
     </Box>
