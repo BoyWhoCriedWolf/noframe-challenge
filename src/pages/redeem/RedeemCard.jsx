@@ -15,6 +15,7 @@ import GreenShadowContainer from "../../components/containers/green-shadow-conta
 import DepositInput from "../../components/deposit-input";
 import SecondaryButton from "../../components/secondary-button";
 import THEMES from "../../theme";
+import DotsConnected from "../../components/typography/dots-connected";
 
 const RedeemCard = () => {
   return (
@@ -63,6 +64,33 @@ const RedeemCard = () => {
           <Grid item lg={6} md={6} sm={6} xs={12}>
             <SecondaryButton>Redeem</SecondaryButton>
           </Grid>
+        </Grid>
+      </Box>
+
+      <Box
+        sx={{
+          mt: 4,
+          py: 2.5,
+          width: "90%",
+          mx: "auto",
+          borderTop: "dashed 1px",
+        }}
+      >
+        <Grid container>
+          {[
+            { label: "Collateral Price", value: "#4,074.43" },
+            { label: "Expected Collateral Received", value: "0.01438 PT" },
+            { label: "Redemption Fee", value: "1,67%" },
+            { label: "Value of Collateral Received", value: "3%" },
+            { label: "Redemption Fee Amount", value: "0.01438 PT" },
+            { label: "Actual Redemption Amount", value: "3%" },
+          ].map((item, itemIndex) => {
+            return (
+              <Grid item lg={6} md={6} sm={6} xs={12} sx={{ p: 1 }}>
+                <DotsConnected words={[item?.label, item?.value]} />
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
     </GreenShadowContainer>
