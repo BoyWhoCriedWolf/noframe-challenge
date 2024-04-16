@@ -1,11 +1,11 @@
-import { Container, Grid } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import PageHeading from "../../../components/typography/page-heading/PageHeading";
 import PageContent from "../../../layout/page-content";
 import MintCard from "../mint-card";
-import MarketInfoCard from "./MarketInfoCard";
 import DebitInfoCard from "./DebitInfoCard";
+import MarketInfoCard from "./MarketInfoCard";
 
 const MarketDetail = () => {
   const { market_id: marketId } = useParams();
@@ -14,17 +14,17 @@ const MarketDetail = () => {
     <Container maxWidth={"sm"}>
       <PageHeading>Mint fixUSD</PageHeading>
       <PageContent>
-        <Grid container alignItems={"stretch"}>
-          <Grid item lg={12} md={12} sm={12} xs={12} sx={{ mb: 7.5 }}>
-            <MintCard marketId={marketId} />
-          </Grid>
-          <Grid item lg={6} md={6} sm={6} xs={12} sx={{ pr: 2.5 }}>
+        <Box sx={{ width: "100%" }}>
+          <MintCard marketId={marketId} />
+        </Box>
+        <Box sx={{ mt: 7.5, display: "flex", columnGap: 2.5 }}>
+          <Box flexGrow={1}>
             <MarketInfoCard marketId={marketId} />
-          </Grid>
-          <Grid item lg={6} md={6} sm={6} xs={12} sx={{ pl: 2.5 }}>
+          </Box>
+          <Box flexGrow={1}>
             <DebitInfoCard />
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </PageContent>
     </Container>
   );

@@ -17,13 +17,19 @@ const MintCard = () => {
         background: (th) => th.palette.common.white,
         border: (th) => `1px solid ${th.palette.common.black}`,
         boxShadow: (th) => `9px 7px 0px ${th.palette.primary.main}`,
-        pt: 4,
-        pb: 5.5,
-        pl: 4,
-        pr: 7,
       }}
     >
-      <Grid container alignItems={"center"} spacing={1.5}>
+      <Grid
+        container
+        alignItems={"center"}
+        spacing={1.5}
+        sx={{
+          pt: 4,
+          pb: 5.5,
+          pl: 4,
+          pr: 7,
+        }}
+      >
         <Grid item lg={2} md={2} sm={2} xs={2}>
           <Typography
             fontWeight={600}
@@ -66,6 +72,7 @@ const MintCard = () => {
                 </Typography>
               ),
             }}
+            fullWidth
           />
         </Grid>
         <Grid item lg={5} md={5} sm={5} xs={5} sx={{ opacity: 0.5 }}>
@@ -103,6 +110,7 @@ const MintCard = () => {
                 </Typography>
               ),
             }}
+            fullWidth
           />
         </Grid>
         <Grid item lg={5} md={5} sm={5} xs={5} sx={{ opacity: 0.5 }}>

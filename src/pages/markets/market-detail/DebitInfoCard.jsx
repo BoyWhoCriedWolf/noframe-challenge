@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import DotsConnected from "../../../components/typography/dots-connected";
-import imgTicket from "../../../assets/img/backgrounds/ticket.svg";
+import imgTicket from "../../../assets/img/backgrounds/ticket.png";
 
 const DebitInfoCard = () => {
   return (
@@ -10,14 +10,18 @@ const DebitInfoCard = () => {
         // color: (th) => th.palette.common.white,
         // background: (th) => th.palette.common.black,
         px: 2.25,
-        py: 2.5,
-        width: "100%",
+        py: 3,
         height: "100%",
         position: "relative",
       }}
     >
       <img
-        style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0 }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+        }}
         src={imgTicket}
         alt="Ticket background"
       />

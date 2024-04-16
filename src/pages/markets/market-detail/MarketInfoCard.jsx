@@ -10,8 +10,7 @@ const MarketInfoCard = () => {
         color: (th) => th.palette.common.white,
         background: (th) => th.palette.common.black,
         px: 2.25,
-        py: 2.5,
-        width: "100%",
+        py: 3,
         height: "100%",
       }}
     >
