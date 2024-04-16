@@ -1,7 +1,7 @@
 import { Box, Container } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
-import PageHeading from "../../../components/typography/page-heading/PageHeading";
+import PageHeading from "../../../components/typography/page-heading";
 import PageContent from "../../../layout/page-content";
 import MintCard from "../mint-card";
 import DebitInfoCard from "./DebitInfoCard";

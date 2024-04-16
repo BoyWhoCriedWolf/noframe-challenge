@@ -2,7 +2,7 @@ import { WarningOutlined } from "@mui/icons-material";
 import { Box, Container, Link, Typography } from "@mui/material";
 import React from "react";
 import GreenShadowContainer from "../../../components/containers/green-shadow-container";
-import PageHeading from "../../../components/typography/page-heading/PageHeading";
+import PageHeading from "../../../components/typography/page-heading";
 import EarnDetailCard from "./EarnDetailCard";
 import EarnSummaryWidget from "./EarnSummaryWidget";
 

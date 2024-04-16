@@ -1,6 +1,5 @@
 import { ArrowDropDown, CalendarMonth, Wallet } from "@mui/icons-material";
 import {
-  Box,
   FormControl,
   Grid,
   MenuItem,
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import GreenShadowContainer from "../../../components/containers/green-shadow-container";
+import SecondaryButton from "../../../components/secondary-button";
 import THEMES from "../../../theme";
 
 const MintCard = () => {
@@ -141,21 +141,7 @@ const MintCard = () => {
 
       <Grid container justifyContent={"center"} sx={{ mb: 5.5 }}>
         <Grid item lg={6} md={6} sm={6} xs={12}>
-          <Box
-            sx={{
-              color: (th) => th.palette.secondary.contrastText,
-              background: (th) => th.palette.secondary.main,
-              py: 1.5,
-              width: "100%",
-              cursor: "pointer",
-              border: (th) => `solid 1px ${th.palette.common.black}`,
-
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            Mint fixUSD
-          </Box>
+          <SecondaryButton>Mint fixUSD</SecondaryButton>
         </Grid>
       </Grid>
     </GreenShadowContainer>

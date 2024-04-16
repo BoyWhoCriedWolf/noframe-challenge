@@ -2,7 +2,7 @@ import { Container, Grid } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBox from "../../components/search-box/SearchBox";
-import PageHeading from "../../components/typography/page-heading/PageHeading";
+import PageHeading from "../../components/typography/page-heading";
 import PageSubtitle from "../../components/typography/page-subtitle";
 import PageContent from "../../layout/page-content";
 import MarketsTable from "./MarketsTable";
