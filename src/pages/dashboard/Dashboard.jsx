@@ -1,8 +1,65 @@
-import { Container } from "@mui/material";
+import {
+  AttachMoney,
+  EmojiEventsOutlined,
+  ShowChart,
+} from "@mui/icons-material";
+import { Box, Container, Grid } from "@mui/material";
 import React from "react";
+import StateWidget from "../../components/state-widget";
 
 const Dashboard = () => {
-  return <Container>Dashboard</Container>;
+  return (
+    <Container>
+      <Box sx={{ my: 2.5 }}>
+        <Grid container alignItems={"stretch"} spacing={1}>
+          {[
+            {
+              icon: <AttachMoney />,
+              label: "My Current Balance",
+              value: "$0.01",
+            },
+            {
+              icon: <ShowChart />,
+              label: "My Net P&L",
+              value: "$489.49",
+              additionalValue: "+2.68%",
+            },
+            {
+              icon: <AttachMoney />,
+              label: "My Total Capital",
+              value: "$17,480.01",
+            },
+            {
+              icon: <EmojiEventsOutlined />,
+              label: "My Claimable Yield & Reward",
+              value: "$17,480.01",
+              showClaim: true,
+            },
+          ].map((item, itemIndex) => {
+            return (
+              <Grid
+                key={itemIndex}
+                item
+                lg={3}
+                ms={3}
+                sm={3}
+                xs={6}
+                sx={{ height: "100%" }}
+              >
+                <StateWidget
+                  label={item?.label}
+                  icon={item?.icon}
+                  value={item?.value}
+                  additionalValue={item?.additionalValue}
+                  showClaim={item?.showClaim}
+                />
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Box>
+    </Container>
+  );
 };
 
 export default Dashboard;
