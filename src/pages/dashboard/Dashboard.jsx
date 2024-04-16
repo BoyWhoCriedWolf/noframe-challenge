@@ -1,62 +1,99 @@
-import {
-  AttachMoney,
-  EmojiEventsOutlined,
-  ShowChart,
-} from "@mui/icons-material";
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
-import StateWidget from "../../components/state-widget";
+import MarketsTable from "../markets/MarketsTable";
+import DashboardStates from "./DashboardStates";
 
 const Dashboard = () => {
   return (
     <Container>
       <Box sx={{ my: 2.5 }}>
-        <Grid container alignItems={"stretch"} spacing={1}>
-          {[
+        <DashboardStates />
+      </Box>
+
+      <Box sx={{ mt: 12 }}>
+        <MarketsTable
+          data={[
             {
-              icon: <AttachMoney />,
-              label: "My Current Balance",
-              value: "$0.01",
+              id: "pt-wst-eth",
+              name: "PT wstETH",
+              description: "Lido",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$2399",
+              icon: null,
             },
             {
-              icon: <ShowChart />,
-              label: "My Net P&L",
-              value: "$489.49",
-              additionalValue: "+2.68%",
+              id: "pt-sw-eth",
+              name: "PT swETH",
+              description: "Swell",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$0",
+              icon: null,
             },
             {
-              icon: <AttachMoney />,
-              label: "My Total Capital",
-              value: "$17,480.01",
+              id: "pt-wst-eth1",
+              name: "PT wstETH",
+              description: "Lido",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$2399",
+              icon: null,
+            },
+          ]}
+        />
+      </Box>
+
+      <Box sx={{ mt: 12 }}>
+        <MarketsTable
+          data={[
+            {
+              id: "pt-wst-eth",
+              name: "PT wstETH",
+              description: "Lido",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$2399",
+              icon: null,
             },
             {
-              icon: <EmojiEventsOutlined />,
-              label: "My Claimable Yield & Reward",
-              value: "$17,480.01",
-              showClaim: true,
+              id: "pt-sw-eth",
+              name: "PT swETH",
+              description: "Swell",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$0",
+              icon: null,
             },
-          ].map((item, itemIndex) => {
-            return (
-              <Grid
-                key={itemIndex}
-                item
-                lg={3}
-                ms={3}
-                sm={3}
-                xs={6}
-                sx={{ height: "100%" }}
-              >
-                <StateWidget
-                  label={item?.label}
-                  icon={item?.icon}
-                  value={item?.value}
-                  additionalValue={item?.additionalValue}
-                  showClaim={item?.showClaim}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
+            {
+              id: "pt-wst-eth1",
+              name: "PT wstETH",
+              description: "Lido",
+              maturity: "2027-12-30",
+              tvl: "$15.5m",
+              mint_fee: "0.5%",
+              borrow_rate: "3%",
+              mcr: "110%",
+              my_net_value: "$2399",
+              icon: null,
+            },
+          ]}
+        />
       </Box>
     </Container>
   );
