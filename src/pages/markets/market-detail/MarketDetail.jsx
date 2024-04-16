@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import PageHeading from "../../../components/typography/page-heading/PageHeading";
 import PageContent from "../../../layout/page-content";
 import MintCard from "../mint-card";
+import MarketInfoCard from "./MarketInfoCard";
+import DebitInfoCard from "./DebitInfoCard";
 
 const MarketDetail = () => {
   const { market_id: marketId } = useParams();
@@ -12,12 +14,16 @@ const MarketDetail = () => {
     <Container maxWidth={"sm"}>
       <PageHeading>Mint fixUSD</PageHeading>
       <PageContent>
-        <Grid container>
-          <Grid item lg={12} md={12} sm={12} xs={12}>
+        <Grid container alignItems={"stretch"}>
+          <Grid item lg={12} md={12} sm={12} xs={12} sx={{ mb: 7.5 }}>
             <MintCard marketId={marketId} />
           </Grid>
-          <Grid item lg={6} md={6} sm={6} xs={12}></Grid>
-          <Grid item lg={6} md={6} sm={6} xs={12}></Grid>
+          <Grid item lg={6} md={6} sm={6} xs={12} sx={{ pr: 2.5 }}>
+            <MarketInfoCard marketId={marketId} />
+          </Grid>
+          <Grid item lg={6} md={6} sm={6} xs={12} sx={{ pl: 2.5 }}>
+            <DebitInfoCard />
+          </Grid>
         </Grid>
       </PageContent>
     </Container>

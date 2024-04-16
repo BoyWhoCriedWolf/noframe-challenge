@@ -18,6 +18,5 @@ export const LIGHT_THEME = createTheme({
     fontSize: "14px",
     body1: { fontSize: "14px", lineHeight: "20px" },
     button: { textTransform: "none" },
-    allVariants: { color: COLOR_PRIMARY_BLACK },
   },
 });
