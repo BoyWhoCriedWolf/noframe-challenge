@@ -10,7 +10,12 @@ const Footer = () => {
   return (
     <Box sx={{ position: "relative" }}>
       <img
-        style={{ position: "absolute", bottom: 0, right: 0 }}
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          pointerEvents: "none",
+        }}
         src={imgUnion}
         alt="union"
       />
