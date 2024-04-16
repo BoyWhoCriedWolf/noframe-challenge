@@ -39,7 +39,7 @@ const MarketInfoCard = () => {
       <Box
         sx={{
           border: "2px solid",
-          borderImageSource: COLOR_PRIMARY_GRADIENT,
+          borderImage: `${COLOR_PRIMARY_GRADIENT} 1`,
           px: 2,
           py: 1,
         }}
