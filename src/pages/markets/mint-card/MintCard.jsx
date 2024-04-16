@@ -1,6 +1,17 @@
-import { Wallet } from "@mui/icons-material";
-import { Box, Grid, TextField, Typography } from "@mui/material";
+import { ArrowDropDown, CalendarMonth, Wallet } from "@mui/icons-material";
+import {
+  Box,
+  FormControl,
+  Grid,
+  MenuItem,
+  Paper,
+  Select,
+  TextField,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
+import THEMES from "../../../theme";
 
 const MintCard = () => {
   const [formData, setFormData] = useState({ deposit: 0 });
@@ -30,8 +41,32 @@ const MintCard = () => {
             Asset
           </Typography>
         </Grid>
-        <Grid item lg={5} md={5} sm={5} xs={5}></Grid>
-        <Grid item lg={5} md={5} sm={5} xs={5}></Grid>
+        <Grid item lg={5} md={5} sm={5} xs={5}>
+          <ThemeProvider theme={THEMES.DARK}>
+            <Paper elevation={0}>
+              <FormControl fullWidth size="small">
+                <Select>
+                  <MenuItem value={"pt-wst-eth"}>PT wstETH</MenuItem>
+                </Select>
+              </FormControl>
+            </Paper>
+          </ThemeProvider>
+        </Grid>
+        <Grid item lg={5} md={5} sm={5} xs={5}>
+          <ThemeProvider theme={THEMES.DARK}>
+            <Paper elevation={0}>
+              <TextField
+                size="small"
+                type="date"
+                InputProps={{
+                  startAdornment: <CalendarMonth />,
+                  endAdornment: <ArrowDropDown />,
+                }}
+                fullWidth
+              />
+            </Paper>
+          </ThemeProvider>
+        </Grid>
 
         {/* deposit */}
         <Grid item lg={2} md={2} sm={2} xs={2}>
